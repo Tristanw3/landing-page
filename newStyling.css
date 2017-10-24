@@ -1,0 +1,275 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body{
+  font-family: raleway;
+  margin: 0;
+  color: white;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  background-color: black;
+  opacity: 0.75;
+}
+
+nav:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+a {
+  margin: 25px;
+  text-decoration: none;
+  color: white;
+  height: 20px;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+nav a:nth-child(1) {
+  font-size: 20px;
+}
+
+.spacer  {
+  flex-grow: 1;
+}
+
+.firstBackground {
+  height: 100vh;
+  background-image: url("assets/cover1.jpg");
+  background-color: black;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 200px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 10px 0;
+}
+
+p {
+  margin: 0;
+  text-align: right;
+  width: 200px;
+  font-size: 14px;
+}
+
+.firstBackground a {
+  border: 3px white solid;
+  border-radius: 3px;
+  margin: 30px 0 200px 0;
+  padding: 12.5px 40px;
+
+}
+
+.firstBackground a:hover {
+  background-color: white;
+  color: purple;
+
+}
+
+.firstBackground a, .firstBackground h1, .firstBackground p {
+  animation: moveUp 0.75s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+@keyframes moveUp {
+  0% {transform: translateY(100px); opacity: 0;}
+
+}
+
+/* 3 Icons section*/
+section {
+  display: flex;
+  justify-content: space-around;
+  color: black;
+  text-align: center;
+}
+
+section div:nth-child(1):hover {
+  color: #E85F2A;
+  transition-delay: 0.1;
+}
+
+section div:nth-child(2):hover {
+  color: #84A9E8;
+}
+
+section div:nth-child(3):hover {
+  color: #2EFF84;
+}
+
+section p {
+  text-align: center;
+}
+
+section div {
+  padding: 75px 0 75px 0;
+  cursor: pointer;
+}
+
+section div h1 {
+  font-size: 100px;
+  margin: 0;
+}
+
+section div h2 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+/*Double image section*/
+
+article {
+  display: flex;
+}
+
+
+article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 33vw;
+  overflow: hidden;
+
+
+}
+
+article div:nth-child(1) {
+  background-color: #5873B2;
+}
+
+article div:nth-child(2) {
+  background-color: #5873B2;
+}
+
+div img {
+  height: 100%;
+  width: 100%;
+}
+
+article div h1, article div a {
+  position: absolute;
+  opacity: 0;
+}
+
+article div:nth-child(1) h1, article div:nth-child(1) a {
+  transform: translateX(-100px);
+}
+
+article div:nth-child(2) h1, article div:nth-child(2) a {
+  transform: translateX(100px);
+}
+
+article div h1 {
+  font-size: 20px;
+}
+
+article div a {
+  border: 3px white solid;
+  border-radius: 3px;
+  padding: 12.5px 40px;
+}
+
+article div:hover img {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+article div:hover h1, article div:hover a {
+  cursor: pointer;
+  transform: translate(0px, 25px);
+  opacity: 1;
+  transition: opacity 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550),
+              transform 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+article div:hover h1 {
+  transform: translate(0, -25px)
+}
+
+article div a:hover {
+  background-color: white;
+  color: #5873B2;
+}
+/*3rd Section*/
+
+sectionB div {
+  background-color: none;
+  height: 700px;
+
+}
+
+sectionB {
+  width: 100%;
+  height: 400px;
+}
+
+sectionB iframe {
+  width: 100%;
+  height: 400px;
+  filter: grayscale(100%);
+  border: 0;
+}
+
+/*Mobile View*/
+
+@media (max-width:555px) {
+  nav,section {
+  opacity: 1;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+
+  }
+
+  nav a {
+    background-color: inherit;
+    font-size: 35px;
+    height: auto;
+
+
+  }
+  .firstBackground {
+    padding-right: 0;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  article {
+    flex-direction: column;
+  }
+
+  article div {
+    width: 100%;
+    height: 100%;
+
+  }
+  img {
+    height: 100%;
+  }
+}
+
+/*@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }*/
