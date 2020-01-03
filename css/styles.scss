@@ -1,0 +1,345 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Kulim+Park&display=swap');
+
+$dark-grey:#C1C7D9;
+$light-grey: #E4E7F2;
+$dark-blue: #233559;
+$mid-blue: #88B6F2;
+$light-blue: #99C8F2;
+$black: rgb(20, 20, 20);
+
+* {
+  font-family: 'Kulim Park', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  background-color: $black;
+  opacity: 0.85;
+
+  a {
+    color: white;
+  }
+
+  a:nth-child(1) {
+    font-size: 20px;
+  }
+}
+
+nav:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+a {
+  margin: 25px;
+  text-decoration: none;
+  color: $black;
+  height: 20px;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+
+
+.spacer {
+  flex-grow: 1;
+}
+
+.firstBackground {
+  height: 100vh;
+  background-image: url("../assets/snow-mountain.jpg");
+  background-color: $black;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 200px;
+
+  a {
+    border: 3px $black solid;
+    border-radius: 3px;
+    margin: 30px 0 200px 0;
+    padding: 12.5px 40px;
+
+  }
+
+  a:hover {
+    background-color: white;
+    color: $dark-blue;
+
+  }
+
+  a,
+  h1,
+  p {
+    animation: moveUp 0.65s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  }
+
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+}
+
+
+h1 {
+  font-size: 48px;
+  margin: 0 0 10px 0;
+}
+
+p {
+  margin: 0;
+
+  width: 200px;
+  font-size: 14px;
+}
+
+
+
+/* 3 Icons section*/
+section {
+  display: flex;
+  justify-content: space-around;
+  color: $black;
+  text-align: center;
+
+  div:nth-child(1):hover {
+    color: #E85F2A;
+    transition-delay: 0.1;
+  }
+
+  div:nth-child(2):hover {
+    color: #84A9E8;
+  }
+
+  div:nth-child(3):hover {
+    color: #2EFF84;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  div {
+    padding: 75px 0 75px 0;
+    cursor: pointer;
+  }
+
+  div h1 {
+    font-size: 100px;
+    margin: 0;
+  }
+
+  div h2 {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/*Double image section*/
+
+article {
+  display: flex;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 33vw;
+    overflow: hidden;
+  }
+
+  div:nth-child(1) {
+    background-color: #5873B2;
+  }
+
+  div:nth-child(2) {
+    background-color: #5873B2;
+  }
+
+  div img {
+    height: 100%;
+    width: 100%;
+  }
+
+  div h1,
+  div a {
+    position: absolute;
+    opacity: 0;
+  }
+
+  div:nth-child(1) h1,
+  div:nth-child(1) a {
+    transform: translateX(-100px);
+  }
+
+  div:nth-child(2) h1,
+  div:nth-child(2) a {
+    transform: translateX(100px);
+  }
+
+  div h1 {
+    font-size: 20px;
+  }
+
+  div a {
+    border: 3px white solid;
+    border-radius: 3px;
+    padding: 12.5px 40px;
+  }
+
+  div:hover img {
+    opacity: 0.3;
+    filter: grayscale(100%);
+  }
+
+  div:hover h1,
+  div:hover a {
+    cursor: pointer;
+    transform: translate(0px, 25px);
+    opacity: 1;
+    transition: opacity 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550),
+      transform 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  }
+
+  div:hover h1 {
+    transform: translate(0, -25px)
+  }
+
+  div a:hover {
+    background-color: white;
+    color: #5873B2;
+  }
+}
+
+/*3rd Section*/
+
+sectionB {
+  width: 100%;
+  height: 400px;
+
+  div {
+    background-color: none;
+    height: 700px;
+
+  }
+
+  iframe {
+    width: 100%;
+    height: 400px;
+    filter: grayscale(100%);
+    border: 0;
+  }
+
+}
+
+/*Mobile View*/
+
+@media (max-width:555px) {
+
+  nav,
+  section {
+    opacity: 1;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  nav a {
+    background-color: inherit;
+    font-size: 35px;
+    height: auto;
+
+
+  }
+
+  .firstBackground {
+    padding-left: 0;
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  article {
+    flex-direction: column;
+  }
+
+  article div {
+    width: 100%;
+    height: 100%;
+
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.test {
+  // border: 1px black solid;
+  height: 600px;
+  padding: 50px;
+  animation: pulse 3s infinite;
+}
+
+.test2 {
+  position: absolute;
+  border: 1px black solid;
+  height: 100px;
+  width: 100px;
+  transform: perspective(50em) rotateX(70deg);
+
+}
+
+.t2 {
+  z-index: 0;
+  margin-left: 20px;
+  margin-top: 60px;
+  background-color: red;
+}
+
+.t3 {
+  z-index: -1;
+  margin-left: 10px;
+  margin-top: 70px;
+  background-color: darkgrey;
+}
+
+.t4 {
+  z-index: -10;
+  margin-top: 90px;
+  background-color: black;
+  border-radius: 50%;
+  transform: perspective(50em) rotateX(70deg) scale(1.5);
+}
+
+@keyframes pulse {
+
+  50% {
+    transform: translateY(10px);
+
+  }
+}
